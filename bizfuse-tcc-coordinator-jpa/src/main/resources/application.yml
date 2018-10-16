@@ -1,0 +1,38 @@
+server:
+  port: 11022
+
+spring:
+  profiles.active: dev,swagger
+  application:
+    name: tcc
+  datasource:
+    platform: mysql
+    url: 'jdbc:mysql://127.0.0.1:3306/tcc_coordinator?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true'
+    driver-class-name: com.mysql.jdbc.Driver
+    username: tcc
+    password: rd123456
+    test-while-idle: true
+    max-wait-millis: 30000
+    validation-query: 'SELECT 1'
+    time-between-eviction-runs-millis: 20000
+    min-evictable-idle-time-millis: 28700
+  jpa: 
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+
+  rabbitmq:
+    host: 127.0.0.1
+    username: rabbit
+    password: 123123
+    virtual-host: apm70
+    listener:
+      retry:
+        enabled: true
+    template:
+      retry:
+        enabled: true
+      mandatory: true
+    publisher-confirms: true
+    publisher-returns: true

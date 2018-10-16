@@ -1,0 +1,36 @@
+server:
+  port: 8001
+
+spring: 
+  profiles.active: dev,swagger
+  application.name: zipkin-server
+# rabbitmq配置
+  rabbitmq: 
+    addresses: amqp://127.0.0.1:5672
+    username: guest
+    password: guest
+
+logging:
+  path: logs
+  level: 
+    org.springframework: WARN
+    bizfuse.demo: INFO
+
+zipkin:
+  storage:
+    StorageComponent: elasticsearch
+    type: elasticsearch
+    elasticsearch: 
+      cluster: elasticsearch
+      hosts: 127.0.0.1:9200
+      max-requests: 64
+      index: zipkin
+      index-shards: 5
+      index-replicas: 1
+
+
+
+  
+  
+
+  

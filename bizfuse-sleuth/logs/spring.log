@@ -1,0 +1,7 @@
+2018-03-30 09:12:36.874  INFO [zipkin-server,,,] 16160 --- [main] bizfuse.sleuth.Application               : The following profiles are active: dev,swagger
+2018-03-30 09:12:40.016  INFO [zipkin-server,,,] 16160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-30 09:12:40.017  INFO [zipkin-server,,,] 16160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-30 09:12:40.035  INFO [zipkin-server,,,] 16160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/liuyg/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2018-03-30 09:12:40.207  INFO [zipkin-server,,,] 16160 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-30 09:12:45.646  INFO [zipkin-server,,,] 16160 --- [main] bizfuse.sleuth.Application               : Started Application in 11.114 seconds (JVM running for 12.098)
+2018-03-30 09:14:08.396  INFO [zipkin-server,,,] 16160 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
