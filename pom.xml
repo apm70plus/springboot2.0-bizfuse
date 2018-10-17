@@ -56,6 +56,31 @@
 				<artifactId>bizfuse-jpa</artifactId>
 				<version>${bizfuse.version}</version>
 			</dependency>
+                        <dependency>
+				<groupId>com.apm70.bizfuse</groupId>
+				<artifactId>bizfuse-flume</artifactId>
+				<version>${bizfuse.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.apm70.bizfuse</groupId>
+				<artifactId>bizfuse-sleuth</artifactId>
+				<version>${bizfuse.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.apm70.bizfuse</groupId>
+				<artifactId>bizfuse-tcc-jpa</artifactId>
+				<version>${bizfuse.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.apm70.bizfuse</groupId>
+				<artifactId>bizfuse-tcc-coordinator-jpa</artifactId>
+				<version>${bizfuse.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.apm70.bizfuse</groupId>
+				<artifactId>bizfuse-event-driven-jpa</artifactId>
+				<version>${bizfuse.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.querydsl</groupId>
 				<artifactId>querydsl-jpa</artifactId>
