@@ -11,7 +11,7 @@
 	<artifactId>bizfuse-tcc-jpa</artifactId>
 	<packaging>jar</packaging>
 
-	<name>TCC</name>
+	<name>TCC with JPA</name>
 	<description>TCC Transaction</description>
 
 	<properties>
@@ -37,10 +37,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>

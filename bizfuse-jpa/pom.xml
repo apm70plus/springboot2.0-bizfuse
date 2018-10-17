@@ -7,7 +7,7 @@
 		<version>2.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>bizfuse-jpa</artifactId>
-	<name>spa common</name>
+	<name>JPA common</name>
 	<description>JPA Data Model Common JAR</description>
 	<packaging>jar</packaging>
 

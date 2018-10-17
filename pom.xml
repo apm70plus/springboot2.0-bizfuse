@@ -34,6 +34,9 @@
 		<module>bizfuse-web</module>
 		<module>bizfuse-jpa</module>
 		<module>bizfuse-flume</module>
+                <module>bizfuse-tcc-jpa</module>
+                <module>bizfuse-tcc-coordinator-jpa</module>
+                <module>bizfuse-event-driven-jpa</module>
 	</modules>
 
 	<dependencyManagement>
