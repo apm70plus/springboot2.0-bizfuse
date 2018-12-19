@@ -1,0 +1,51 @@
+package @Package@;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.apm70.bizfuse.web.dto.AbstractConvertor;
+import @DTOPath@;
+import @ModelPath@;
+import @ServicePath@;
+import lombok.NonNull;
+
+/**
+ * @Model@Convertor
+ */
+@Component
+public class @Model@Convertor extends AbstractConvertor<@Model@, @Model@DTO> {
+
+    @Autowired
+    private @Model@Service @model@Service;
+    
+    @Override
+    public @Model@ toModel(@NonNull final @Model@DTO dto) {
+        if (dto.isNew()) {//新增
+            return constructModel(dto);
+        } else {//更新
+            return updateModel(dto);
+        }
+    }
+
+    @Override
+    public @Model@DTO toDTO(@NonNull final @Model@ model, final boolean forListView) {
+        final @Model@DTO dto = new @Model@DTO();
+        dto.setId(model.getId());
+        @setDTOCode@
+        return dto;
+    }
+
+    // 构建新Model
+    private @Model@ constructModel(final @Model@DTO dto) {
+        @Model@ model = new @Model@();
+        @setModelCode@
+        return model;
+    }
+
+    // 更新Model
+    private @Model@ updateModel(final @Model@DTO dto) {
+        @Model@ model = @model@Service.get(dto.getId());
+        @setModelCode@
+        return model;
+    }
+}

@@ -1,0 +1,50 @@
+package @Package@;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.apm70.bizfuse.exception.BusinessException;
+import @ServicePath@;
+import @ModelPath@;
+import @RepositoryPath@;
+import lombok.NonNull;
+
+/**
+ * @Model@Service 实现类
+ */
+@Service
+@Transactional
+public class @Model@ServiceImpl implements @Model@Service {
+
+    @Autowired
+    private @Model@Repository @model@Repository;
+
+    @Override
+    @Transactional(readOnly = true)
+    public @Model@ get(@NonNull Long id) {
+        final  @Model@ model = @model@Repository.findOne(id);
+        if (model == null) {
+            throw new BusinessException("404", String.format("查找的资源[%s]不存在.", id));
+        }
+        return model;
+    }
+
+    @Override
+    public @Model@ create(@Model@ model) {
+        // TODO: 业务逻辑
+        return @model@Repository.save(model);
+    }
+
+    @Override
+    public @Model@ update(@Model@ model) {
+        // TODO: 业务逻辑
+        return @model@Repository.save(model);
+    }
+
+    @Override
+    public void delete(@NonNull Long id) {
+        // TODO: 业务逻辑
+        @model@Repository.delete(id);
+    }
+}

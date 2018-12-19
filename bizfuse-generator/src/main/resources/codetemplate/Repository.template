@@ -1,0 +1,22 @@
+package @Package@;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.Repository;
+
+import @ModelPath@;
+
+/**
+ * @Model@Repository
+ */
+public interface @Model@Repository extends Repository<@Model@, Long> {
+
+    Page<@Model@> findAll(Pageable pageable);
+
+    @Model@ findOne(Long id);
+
+    @Model@ save(@Model@ model);
+
+    void delete(Long id);
+
+}
