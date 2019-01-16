@@ -1,5 +1,8 @@
 ## Spring Data扩展
 
+### Querydsl基本用法
+参考官网[Querying JPA](http://www.querydsl.com/static/querydsl/latest/reference/html/ch02.html#jpa_integration)
+
 ### Querydsl扩展
 Querydsl是一个框架,通过它的流式API构建静态类型的SQL类查询。多个Spring Data模块通过QueryDslPredicateExecutor与Querydsl集成。
 
@@ -65,18 +68,19 @@ Collection在简单属性上如同in
 ```
 
 这些绑定可以通过@QuerydslPredicate的bindings属性定制或者使用Java8default methods给仓库接口添加QuerydslBinderCustomizer  
-```
-interface UserReposotory extends CurdRepository<User, String>,
-  QueryDslPredicateExecutor<User>,  ①
-  QuerydslBinderCustomizer<QUser> {  ②
-  
+```java
+pubilc Interface UserReposotory extends CurdRepository<User, String>,
+    QueryDslPredicateExecutor<User>,  ①
+    QuerydslBinderCustomizer<QUser> {  ②  
+    
     @Override
-  	default public void customize(QuerydslBindings bindings, QUser user) {
-      bindings.bind(user.username).first((path, value) -> path.contains(value));  ③
-      bindings.bind(String.class).first((StringPath path, String value) -> path.containsIgnoreCase(value));  ④
-      bindings.excluding(user.password);  ⑤
-  	}
-  }
+    default public void customize(QuerydslBindings bindings, QUser user) {
+        bindings.bind(user.username).first((path, value) -> path.contains(value));  ③
+        bindings.bind(String.class).first(
+            (StringPath path, String value) -> path.containsIgnoreCase(value));  ④
+        bindings.excluding(user.password);  ⑤
+    }
+}
   
 ① QueryDslPredicateExecutor为Predicate提供特殊的查询方法提供入口
 ② 在仓库接口定义QuerydslBinderCustomizer将自动注解@QuerydslPredicate(bindings=…)
